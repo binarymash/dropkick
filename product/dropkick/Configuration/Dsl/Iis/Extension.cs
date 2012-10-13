@@ -29,7 +29,7 @@ namespace dropkick.Configuration.Dsl.Iis
         public static IisSiteOptions Iis7Site(this ProtoServer protoServer, string websiteName)
         {
             var task = new IisProtoTask(websiteName, new DotNetPath())
-                           {
+                       {
                                Version = IisVersion.Seven,
                        };
             protoServer.RegisterProtoTask(task);

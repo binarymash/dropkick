@@ -35,7 +35,7 @@
                 Directory.CreateDirectory(OldPath);
                 Directory.CreateDirectory(NewPath);
 
-                var task = new Iis7Task
+                var task = new Iis7InstallTask
                 {
                     PathOnServer = OldPath,
                     ServerName = WebServer,
@@ -77,7 +77,7 @@
         {
             public override void Because()
             {
-                var task = new Iis7Task
+                var task = new Iis7InstallTask
                 {
                     PathOnServer = NewPath,
                     ServerName = WebServer,
@@ -131,5 +131,6 @@
         }
 
         #endregion
+
     }
 }
