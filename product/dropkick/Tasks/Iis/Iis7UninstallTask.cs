@@ -62,14 +62,15 @@ namespace dropkick.Tasks.Iis
                 var application = site.Applications.FirstOrDefault(x => x.Path == appPath);
                 if (application != null)
                 {
+                    applicationPoolName = application.ApplicationPoolName;
                     site.Applications.Remove(application);
                     virtualDirectoryDeleted = true;
 
                     if (!PreserveApplicationPool)
                     {
-                        if (ApplicationPoolIsOrphaned(iisManager, application.ApplicationPoolName))
+                        if (ApplicationPoolIsOrphaned(iisManager, applicationPoolName))
                         {
-                            var appPool = iisManager.ApplicationPools.FirstOrDefault(x => x.Name == application.ApplicationPoolName);
+                            var appPool = iisManager.ApplicationPools.FirstOrDefault(x => x.Name == applicationPoolName);
                             if (appPool != null)
                             {
                                 iisManager.ApplicationPools.Remove(appPool);
