@@ -25,7 +25,7 @@ namespace dropkick.tests.Tasks.Iis
         [Test, Explicit]
         public void Create_A_VirtualDiretory()
         {
-            var task = new Iis7Task
+            var task = new Iis7InstallTask
                            {
                                PathOnServer = "C:\\SomethingAwesome",
                                ServerName = "localhost",
@@ -47,7 +47,7 @@ namespace dropkick.tests.Tasks.Iis
         [Test, Explicit]
         public void Create_A_VirtualDiretory_withClassic()
         {
-            var task = new Iis7Task
+            var task = new Iis7InstallTask
                            {
                                PathOnServer = "C:\\SomethingAwesome",
                                ServerName = "localhost",
@@ -74,5 +74,6 @@ namespace dropkick.tests.Tasks.Iis
 
             iis.CommitChanges();
         }
+
     }
 }

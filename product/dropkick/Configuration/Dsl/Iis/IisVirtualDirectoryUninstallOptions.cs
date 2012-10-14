@@ -10,16 +10,11 @@
 // under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
 // CONDITIONS OF ANY KIND, either express or implied. See the License for the 
 // specific language governing permissions and limitations under the License.
+
 namespace dropkick.Configuration.Dsl.Iis
 {
-    using System;
-
-    public interface IisSiteOptions
+    public interface IisVirtualDirectoryUninstallOptions
     {
-        IisSiteInstallOptions Install { get; }
-        IisSiteUninstallOptions Uninstall { get; }
-
-        [Obsolete("If you are installing an IIS 7 website you should now set the virtual directory settings via Iis7Site.Install.VirtualDirectory", true)]
-        IisVirtualDirectoryOptions VirtualDirectory(string name);
+        IisVirtualDirectoryUninstallOptions PreserveTheApplicationPool();
     }
 }

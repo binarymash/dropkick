@@ -102,8 +102,13 @@
     <Compile Include="Configuration\Dsl\Files\ProtoEncryptAppConfigTask.cs" />
     <Compile Include="Configuration\Dsl\Files\ProtoUnzipArchiveTask.cs" />
     <Compile Include="Configuration\Dsl\Files\UnzipOptions.cs" />
+    <Compile Include="Configuration\Dsl\Iis\Action.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisVirtualDirectoryOptions.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisVirtualDirectoryUninstallOptions.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisSiteUninstallOptions.cs" />
     <Compile Include="Configuration\Dsl\Iis\IisApplicationPoolOperationProtoTask.cs" />
     <Compile Include="Configuration\Dsl\Iis\IisOperations.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisSiteInstallOptions.cs" />
     <Compile Include="Configuration\Dsl\Iis\ProcessModelIdentity.cs" />
     <Compile Include="Configuration\Dsl\Msmq\MsmqQueueOptions.cs" />
     <Compile Include="Configuration\Dsl\MsSrss\Extensions.cs" />
@@ -164,6 +169,8 @@
     <Compile Include="Tasks\Files\FilePokeReplacement.cs" />
     <Compile Include="Tasks\Files\FilePokeTask.cs" />
     <Compile Include="Tasks\Files\UnzipArchiveTask.cs" />
+    <Compile Include="Tasks\Iis\Iis7InstallTask.cs" />
+    <Compile Include="Tasks\Iis\Iis7UninstallTask.cs" />
     <Compile Include="Tasks\Iis\Iis6Path.cs" />
     <Compile Include="Tasks\Iis\Iis7OperationTask.cs" />
     <Compile Include="Tasks\Iis\IisUtility.cs" />
@@ -312,7 +319,7 @@
     <Compile Include="Configuration\Dsl\Iis\IisSiteOptions.cs" />
     <Compile Include="Tasks\Iis\Iis6Task.cs" />
     <Compile Include="Configuration\Dsl\Iis\IisVersionSelector.cs" />
-    <Compile Include="Configuration\Dsl\Iis\IisVirtualDirectoryOptions.cs" />
+    <Compile Include="Configuration\Dsl\Iis\IisVirtualDirectoryInstallOptions.cs" />
     <Compile Include="Configuration\Dsl\Msmq\Extension.cs" />
     <Compile Include="Configuration\Dsl\Msmq\MsmqOptions.cs" />
     <Compile Include="Tasks\Msmq\CreateLocalMsmqQueueTask.cs" />

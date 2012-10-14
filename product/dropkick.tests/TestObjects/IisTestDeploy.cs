@@ -24,9 +24,11 @@ namespace dropkick.tests.TestObjects
             {
                 //TODO: make this a prompt
                 server.Iis7Site("Default Web Site", @"D:\IntNet", 80)
+                    .Install
                     .VirtualDirectory("dk_test");
 
                 server.Iis7Site("Default Web Site")
+                    .Install
                     .VirtualDirectory("fp")
                     .SetAppPoolTo("appPoolName", pool=>
                     {
@@ -34,7 +36,16 @@ namespace dropkick.tests.TestObjects
                         pool.UseClassicPipeline();
                     })
                     .SetPathTo(@"~\websites\my_web");
-                //     '\\server' + \websites\my_web
+
+                server.Iis7Site("Default Web Site")
+                    .Uninstall
+                    .VirtualDirectory("fp");
+
+                server.Iis7Site("Default Web Site")
+                    .Uninstall
+                    .PreserveTheWebSite()
+                    .VirtualDirectory("dk_test")
+                        .PreserveTheApplicationPool();
             }));
         }
 

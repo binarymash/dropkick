@@ -1,8 +1,8 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using Magnum;
+using System.Linq;
 using dropkick.DeploymentModel;
+using Magnum;
 
 namespace dropkick.tests
 {
@@ -28,19 +28,19 @@ namespace dropkick.tests
             Assert.AreEqual(typeof(T), actual.GetType());
         }
 
-		public static void ShouldNotBeNull(this object actual)
-		{
-			Assert.IsNotNull(actual);
-		}
+        public static void ShouldNotBeNull(this object actual)
+        {
+            Assert.IsNotNull(actual);
+        }
 
-		public static void ShouldContain<T>(this ICollection<T> collection, T item)
-		{
-			Guard.AgainstNull(collection, "Collection is null, cannot assert item membership.");
-			Assert.IsTrue(collection.Contains(item), 
-				"Collection of type '{0}' does not contain expected item '{1}'", 
-				typeof(T).Name, 
-				item == null ? "(null)" : item.ToString());
-		}
+        public static void ShouldContain<T>(this ICollection<T> collection, T item)
+        {
+            Guard.AgainstNull(collection, "Collection is null, cannot assert item membership.");
+            Assert.IsTrue(collection.Contains(item), 
+                "Collection of type '{0}' does not contain expected item '{1}'", 
+                typeof(T).Name, 
+                item == null ? "(null)" : item.ToString());
+        }
 
       public static void ShouldContain(this dropkick.DeploymentModel.DeploymentResult resultNotExists, DeploymentItemStatus status, int count) {
          resultNotExists.Results.Count(x => x.Status == status).ShouldBeEqualTo(count);
